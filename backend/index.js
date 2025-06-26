@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const PORT = process.env.PORT || 4000;
+const PORT =  4000;
 
 // MongoDB URI
 const MONGO_URI = "mongodb+srv://Indhu:Indhuvish@cluster0.qfayvsv.mongodb.net/Expensetracker?retryWrites=true&w=majority&appName=Cluster0";
