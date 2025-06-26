@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Expenceform from './Expenseform.jsx'
+import Expenceform from './ExpenseForm.jsx'
 import History from './History.jsx'
 import BalanceContainer from './BalanceContainer.jsx';
 
@@ -10,7 +10,7 @@ function ExpenseContainer(){
 const [expense,setExpense]=useState([])
 const fetchExpense = async () => {
   try {
-    const response = await fetch("http://localhost:4000/Expense");
+    const response = await fetch("https://expense-tracker-2-gqup.onrender.com/Expense");
     const data = await response.json();
     setExpense(data);
   } catch (error) {
@@ -23,7 +23,7 @@ useEffect(() => {
 }, []);
 const addExpense=async(title,amount)=>{
   try{
-    const response = await fetch("http://localhost:4000/Expense", {
+    const response = await fetch("https://expense-tracker-2-gqup.onrender.com/Expense", {
       method: "POST",
       headers: {"Content-Type": "application/json"  },
       body: JSON.stringify({title,amount }),
